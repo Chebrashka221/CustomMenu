@@ -1,0 +1,26 @@
+# Maven
+target/
+dependency-reduced-pom.xml
+*.class
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# Claude Code
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db

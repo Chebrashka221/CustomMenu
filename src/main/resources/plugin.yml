@@ -1,0 +1,33 @@
+name: CustomMenus
+version: 2.0.0
+main: ru.blacksmith.v2.BlacksmithPlugin
+api-version: '1.21'
+author: NexoriaServer
+description: CustomMenus — кастомные магазины с in-game редактором
+
+depend:
+  - ItemsAdder
+  - Vault
+  - PlaceholderAPI
+  - LevelCore
+
+softdepend:
+  - PlayerPoints
+  - ExecutableItems
+
+commands:
+  cm:
+    description: "Открыть магазин. /cm [shopId] — открыть конкретный магазин"
+    usage: /cm [shopId]
+    aliases: [custommenu]
+  cmadmin:
+    description: "Панель администратора CustomMenus"
+    usage: /cmadmin <editor|list|give|reset|help>
+    permission: custommenu.admin
+    aliases: [custommenusadmin]
+
+permissions:
+  custommenu.use:
+    default: true
+  custommenu.admin:
+    default: op

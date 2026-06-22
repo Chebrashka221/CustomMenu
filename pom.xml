@@ -82,6 +82,53 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>com.github.wvengen</groupId>
+                <artifactId>proguard-maven-plugin</artifactId>
+                <version>2.6.0</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.guardsquare</groupId>
+                        <artifactId>proguard-base</artifactId>
+                        <version>7.4.2</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.guardsquare</groupId>
+                        <artifactId>proguard-core</artifactId>
+                        <version>9.1.4</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals><goal>proguard</goal></goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <proguardVersion>7.4.2</proguardVersion>
+                    <injar>${project.build.finalName}.jar</injar>
+                    <outjar>${project.build.finalName}.jar</outjar>
+                    <outputDirectory>${project.build.directory}</outputDirectory>
+                    <obfuscate>true</obfuscate>
+                    <options>
+                        <option>-keep public class ru.blacksmith.v2.BlacksmithPlugin { *; }</option>
+                        <option>-keep class * implements org.bukkit.event.Listener { *; }</option>
+                        <option>-keep class * implements org.bukkit.command.CommandExecutor { *; }</option>
+                        <option>-keep class * implements org.bukkit.command.TabCompleter { *; }</option>
+                        <option>-keepclassmembers class * extends org.bukkit.plugin.java.JavaPlugin {
+                            public void onEnable();
+                            public void onDisable();
+                            public void onLoad();
+                        }</option>
+                        <option>-dontwarn **</option>
+                        <option>-ignorewarnings</option>
+                        <option>-dontoptimize</option>
+                    </options>
+                    <libs>
+                        <lib>${java.home}/jmods</lib>
+                    </libs>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>

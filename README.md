@@ -47,7 +47,7 @@ A Minecraft plugin for Paper/Purpur 1.21+ that lets you create custom shops with
 
 ### Installation
 
-1. Download `CustomMenus-2.0.0-shaded.jar` from [Releases](../../releases)
+1. Download `CustomMenus-2.0.0.jar` from [Releases](../../releases)
 2. Place it in your server's `/plugins/` folder
 3. Make sure all required dependencies are installed
 4. Start the server — the plugin will create `plugins/CustomMenus/`
@@ -133,7 +133,7 @@ Minecraft-плагин для Paper/Purpur 1.21+, который позволя�
 
 ### Установка
 
-1. Скачай `CustomMenus-2.0.0-shaded.jar` из [Releases](../../releases)
+1. Скачай `CustomMenus-2.0.0.jar` из [Releases](../../releases)
 2. Положи в папку `/plugins/` на сервере
 3. Убедись что все обязательные зависимости установлены
 4. Запусти сервер — плагин создаст папку `plugins/CustomMenus/`
